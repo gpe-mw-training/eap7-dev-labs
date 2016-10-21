@@ -17,6 +17,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
 import org.jboss.gpse.eap6ws.domain.Customer;
 
 /**
@@ -24,7 +28,7 @@ import org.jboss.gpse.eap6ws.domain.Customer;
  * @author GPSE
  */
 @Singleton
-@Path("/customers")
+@Path("/")
 public class CustomerResource {
 	
 	@Inject
@@ -59,6 +63,7 @@ public class CustomerResource {
 	 * back to a customer for the parameter to this method.
 	 */
 	@POST
+    @Path("customers/")
 	@Consumes("application/xml")
 	public Response createCustomer(Customer customer) {
 		customer.setId(custDAO.getIdCounter().incrementAndGet());
@@ -73,7 +78,7 @@ public class CustomerResource {
 	 * sending back to the client.
 	 */
 	@GET
-	@Path("{id}")
+    @Path("customers/id/{id}")
 	@Produces("application/xml")
 	public Customer getCustomer(@PathParam("id") int id) {
 		Customer customer = custDAO.getCustomerDB().get(id);
@@ -82,6 +87,27 @@ public class CustomerResource {
 		}
 		return customer;
 	}
+
+    /*
+     * retrieves all the customer objects.
+     * This method is convenient to use for debugging the application from a web browser.
+     */
+    @GET
+    @Path("customers/")
+    @Produces("text/plain")
+    public String getCustomer() {
+        Map<Integer, Customer> map = custDAO.getCustomerDB();
+        if (map == null) {
+            System.out.println("The map object is null");
+            throw new WebApplicationException(Response.Status.NOT_FOUND);
+        }
+        StringBuffer sb = new StringBuffer();
+        for (Map.Entry<Integer, Customer> entry : map.entrySet()) {
+            sb.append("Key = " + entry.getKey() + ", Value = " + entry.getValue().toString());
+        }
+            return sb.toString();
+    }
+
 	
 	/* The client must know the id of the resource to use the PUT operation.
 	 * The operation is idempotent since sending the message more than once has no affect on the service.
@@ -90,7 +116,7 @@ public class CustomerResource {
 	 */
 
 	@PUT
-	@Path("{id}")
+    @Path("customers/id/{id}")
 	@Consumes("application/xml")
 	public Response updateCustomer(@PathParam("id") int id, Customer customer) {
 		Customer current = custDAO.getCustomerDB().get(id);

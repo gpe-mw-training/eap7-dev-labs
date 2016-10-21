@@ -19,7 +19,7 @@ import org.jboss.gpse.eap6ws.domain.Customer;
  */
 public class CustomerResourceTestClient 
 {
-	private static final String BASEURL = "http://eaptest-althomas.apps.ose.opentlc.com/rest-service/";
+	private String BASEURL;
 	JAXBContext ctx;
 	
 
@@ -28,7 +28,11 @@ public class CustomerResourceTestClient
 	 * @throws Exception
 	 */
 	public void testCustomerResource() throws Exception {
-		ctx = JAXBContext.newInstance(Customer.class);
+		String host = System.getProperty("VMHOST");
+        System.out.println(" ******** Value of host is " + host);
+        BASEURL = "http://" + host + ":8080/RestfulService/rest-service/";
+
+        ctx = JAXBContext.newInstance(Customer.class);
 		String custURL = createCustomer();
 		getCustomer(custURL);
 		updateCustomer(custURL);
