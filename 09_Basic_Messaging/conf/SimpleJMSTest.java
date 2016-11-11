@@ -13,6 +13,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.util.Hashtable;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -47,6 +48,12 @@ public class SimpleJMSTest {
     public void sendJMSMessage() throws Exception {
         String content = "Hello from Red Hat GPTE";
         contextObj.createProducer().send(gpteQueue, content);
+    }
+
+    @After
+    public void shutdown() throws Exception {
+        if(contextObj != null)
+            contextObj.close();
     }
 
 }
