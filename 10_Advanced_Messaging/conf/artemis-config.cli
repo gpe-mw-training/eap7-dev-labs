@@ -1,0 +1,7 @@
+batch
+
+# Change address-full-policy of gpteQueue to: PAGE
+# Also reduce page-size-bytes & max-size-bytes by 2 orders of magnitude from its default values so as to prompt PAGING more quickly in test
+/subsystem=messaging-activemq/server=default/address-setting=jms.queue.gpteQueue/:add(address-full-policy=PAGE,max-size-bytes=104857,page-size-bytes=20908)
+
+run-batch
