@@ -21,7 +21,7 @@
     <groupId>com.redhat.gpe.eapcourse</groupId>
     <artifactId>jbossmodules</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-</version>
+    <version>1.0</version>
     <name>jbossmodules</name>
     <description>This project is a simple jar to demo the use of JBoss Modules</description>
     <url>http://www.jboss.org/products/eap</url>

@@ -19,7 +19,7 @@ import org.jboss.gpse.eap6ws.domain.Customer;
  */
 public class CustomerResourceTestClient 
 {
-	private String BASEURL;
+	private String BASEURL;   //  = "http://1rhel72guiv108-gpterhel72eap7dev-tmtnis7o.srv.ravcloud.com:8080/RestfulService/rest-service/";
 	JAXBContext ctx;
 	
 
@@ -29,10 +29,10 @@ public class CustomerResourceTestClient
 	 */
 	public void testCustomerResource() throws Exception {
 		String host = System.getProperty("VMHOST");
-        System.out.println(" ******** Value of host is " + host);
-        BASEURL = "http://" + host + ":8080/RestfulService/rest-service/";
-
-        ctx = JAXBContext.newInstance(Customer.class);
+		System.out.println(" ******************* Value of host is " + host);
+		BASEURL = "http://" + host + ":8080/RestfulService/rest-service/";
+		
+		ctx = JAXBContext.newInstance(Customer.class);
 		String custURL = createCustomer();
 		getCustomer(custURL);
 		updateCustomer(custURL);
@@ -56,8 +56,9 @@ public class CustomerResourceTestClient
 		newCustomer.setMobileNumber("555-666-7777");
 		newCustomer.setEmail("rt@EAP6WS.org");
 		
+		System.out.println("URL = " + BASEURL + "customers");
 		URL postURL = new URL(BASEURL + "customers");
-		 HttpURLConnection connection = (HttpURLConnection) postURL.openConnection();
+		HttpURLConnection connection = (HttpURLConnection) postURL.openConnection();
 		connection.setDoOutput(true);
 		connection.setInstanceFollowRedirects(false);
 		connection.setRequestMethod("POST");

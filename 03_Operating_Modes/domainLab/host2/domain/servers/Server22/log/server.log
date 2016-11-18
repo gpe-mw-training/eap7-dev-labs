@@ -1,0 +1,13 @@
+2016-11-11 01:27:02,006 INFO  [org.jboss.as.server] (Thread-2) WFLYSRV0220: Server shutdown has been requested.
+2016-11-11 01:27:03,963 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2016-11-11 01:27:03,975 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0006: Unbound messaging object to jndi name java:jboss/DefaultJMSConnectionFactory
+2016-11-11 01:27:04,486 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0019: Host default-host stopping
+2016-11-11 01:27:04,488 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-2) WFLYJCA0011: Unbound JCA ConnectionFactory [java:/JmsXA]
+2016-11-11 01:27:04,490 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 94) WFLYMSGAMQ0006: Unbound messaging object to jndi name java:/ConnectionFactory
+2016-11-11 01:27:05,452 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2016-11-11 01:27:06,668 INFO  [org.apache.activemq.artemis.ra] (ServerService Thread Pool -- 95) AMQ151003: resource adaptor stopped
+2016-11-11 01:27:07,638 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 95) AMQ221002: Apache ActiveMQ Artemis Message Broker version 1.1.0.SP16-redhat-1 [e94d4421-9c5f-11e6-9a64-671cb026fa1c] stopped
+2016-11-11 01:27:07,731 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0008: Undertow HTTP listener default suspending
+2016-11-11 01:27:07,740 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 0.0.0.0:8080
+2016-11-11 01:27:07,748 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 1.3.21.Final-redhat-1 stopping
+2016-11-11 01:27:07,912 INFO  [org.jboss.as] (MSC service thread 1-4) WFLYSRV0050: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) stopped in 5673ms

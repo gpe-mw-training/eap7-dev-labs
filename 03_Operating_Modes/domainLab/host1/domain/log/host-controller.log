@@ -1,0 +1,31 @@
+2016-11-10 18:01:19,062 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final-redhat-1
+2016-11-10 18:01:19,591 INFO  [org.jboss.msc] (main) JBoss MSC version 1.2.6.Final-redhat-1
+2016-11-10 18:01:19,705 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) starting
+2016-11-10 18:01:21,443 INFO  [org.xnio] (MSC service thread 1-2) XNIO version 3.3.6.Final-redhat-1
+2016-11-10 18:01:21,461 INFO  [org.xnio.nio] (MSC service thread 1-2) XNIO NIO Implementation Version 3.3.6.Final-redhat-1
+2016-11-10 18:01:21,717 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 4.0.18.Final-redhat-1
+2016-11-10 18:01:21,814 INFO  [org.jboss.as.remoting] (MSC service thread 1-2) WFLYRMT0001: Listening on 0.0.0.0:10999
+2016-11-10 18:01:27,359 INFO  [org.jboss.as.controller.management-deprecated] (Host Controller Service Threads - 5) WFLYCTL0028: Attribute 'max-permgen-size' in the resource at address '/server-group=secondary-server-group/jvm=default' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2016-11-10 18:01:27,366 INFO  [org.jboss.as.controller.management-deprecated] (Host Controller Service Threads - 5) WFLYCTL0028: Attribute 'max-permgen-size' in the resource at address '/server-group=primary-server-group/jvm=default' is deprecated, and may be removed in future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2016-11-10 18:01:27,700 INFO  [org.jboss.as.host.controller] (Controller Boot Thread) WFLYHC0148: Connected to master host controller at remote://127.0.0.1:9999
+2016-11-10 18:01:27,863 INFO  [org.jboss.as.host.controller] (Controller Boot Thread) WFLYHC0023: Starting server Server11
+2016-11-10 18:01:27,868 WARN  [org.jboss.as.host.controller] (Controller Boot Thread) WFLYHC0011: Ignoring <permgen> for jvm 'SUN' type jvm: default
+2016-11-10 18:01:28,061 WARN  [org.jboss.as.host.controller] (ProcessControllerConnection-thread - 2) WFLYHC0011: Ignoring <permgen> for jvm 'SUN' type jvm: default
+2016-11-10 18:01:32,377 INFO  [org.jboss.as.host.controller] (management task-1) WFLYHC0021: Server [Server:Server11] connected using connection [Channel ID 2af3ac7b (inbound) of Remoting connection 0e50b02e to /10.0.0.1:58318]
+2016-11-10 18:01:32,491 INFO  [org.jboss.as.host.controller] (Controller Boot Thread) WFLYHC0023: Starting server Server12
+2016-11-10 18:01:32,492 WARN  [org.jboss.as.host.controller] (Controller Boot Thread) WFLYHC0011: Ignoring <permgen> for jvm 'SUN' type jvm: default
+2016-11-10 18:01:32,518 INFO  [org.jboss.as.host.controller] (server-registration-threads - 1) WFLYHC0020: Registering server Server11
+2016-11-10 18:01:32,766 WARN  [org.jboss.as.host.controller] (ProcessControllerConnection-thread - 2) WFLYHC0011: Ignoring <permgen> for jvm 'SUN' type jvm: default
+2016-11-10 18:01:42,257 INFO  [org.jboss.as.host.controller] (management task-5) WFLYHC0021: Server [Server:Server12] connected using connection [Channel ID 3f72bccf (inbound) of Remoting connection 7ad2a0c6 to /10.0.0.1:44534]
+2016-11-10 18:01:42,496 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) (Host Controller) started in 24467ms - Started 43 of 44 services (13 services are lazy, passive or on-demand)
+2016-11-10 18:01:42,539 INFO  [org.jboss.as.host.controller] (server-registration-threads - 1) WFLYHC0020: Registering server Server12
+2016-11-10 19:09:23,929 INFO  [org.jboss.as.repository] (Host Controller Service Threads - 53) WFLYDR0002: Content removed from location /home/jboss/eap7_labs/solution/eap7-dev-labs/03_Operating_Modes/domainLab/host1/domain/data/content/cb/e0a3a1e144bf6d37dba6cba8ccbc46000fef39/content
+2016-11-10 19:09:35,759 INFO  [org.jboss.as.repository] (Host Controller Service Threads - 56) WFLYDR0002: Content removed from location /home/jboss/eap7_labs/solution/eap7-dev-labs/03_Operating_Modes/domainLab/host1/domain/data/content/1d/8318b61c6558bf0023634a185a3c055e548813/content
+2016-11-11 01:27:03,944 INFO  [org.jboss.as.host.controller] (management task-1) WFLYHC0029: Unregistered at domain controller
+2016-11-11 01:27:04,469 INFO  [org.jboss.as.host.controller] (Host Controller Service Threads - 83) WFLYHC0024: Stopping server Server12
+2016-11-11 01:27:04,648 INFO  [org.jboss.as.host.controller] (Host Controller Service Threads - 83) WFLYHC0024: Stopping server Server11
+2016-11-11 01:27:08,208 INFO  [org.jboss.as.host.controller] (management task-5) WFLYHC0027: Unregistering server Server11
+2016-11-11 01:27:09,827 INFO  [org.jboss.as.host.controller] (ProcessControllerConnection-thread - 2) WFLYHC0027: Unregistering server Server11
+2016-11-11 01:27:10,552 INFO  [org.jboss.as.host.controller] (management task-7) WFLYHC0027: Unregistering server Server12
+2016-11-11 01:27:11,275 INFO  [org.jboss.as.host.controller] (ProcessControllerConnection-thread - 2) WFLYHC0027: Unregistering server Server12
+2016-11-11 01:27:11,400 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0050: JBoss EAP 7.0.0.GA (WildFly Core 2.1.2.Final-redhat-1) stopped in 8119ms

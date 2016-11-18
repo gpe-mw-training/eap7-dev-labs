@@ -63,13 +63,13 @@ public class CustomerResource {
 	 * back to a customer for the parameter to this method.
 	 */
 	@POST
-    @Path("customers/")
+	@Path("customers/")
 	@Consumes("application/xml")
 	public Response createCustomer(Customer customer) {
 		customer.setId(custDAO.getIdCounter().incrementAndGet());
 		custDAO.getCustomerDB().put(customer.getId(), customer);
 		System.out.println("Created customer " + customer.getId());
-		return Response.created(URI.create("/customers/" + customer.getId())).build();
+		return Response.created(URI.create("/customers/id/" + customer.getId())).build();
 	}
 	
 	/*
@@ -78,36 +78,37 @@ public class CustomerResource {
 	 * sending back to the client.
 	 */
 	@GET
-    @Path("customers/id/{id}")
+	@Path("customers/id/{id}")
 	@Produces("application/xml")
 	public Customer getCustomer(@PathParam("id") int id) {
 		Customer customer = custDAO.getCustomerDB().get(id);
 		if(customer == null) {
+			System.out.println("No customer found with and id of " + id);
 			throw new WebApplicationException(Response.Status.NOT_FOUND);
 		}
 		return customer;
 	}
 
-    /*
-     * retrieves all the customer objects.
-     * This method is convenient to use for debugging the application from a web browser.
-     */
-    @GET
-    @Path("customers/")
-    @Produces("text/plain")
-    public String getCustomer() {
-        Map<Integer, Customer> map = custDAO.getCustomerDB();
-        if (map == null) {
-            System.out.println("The map object is null");
-            throw new WebApplicationException(Response.Status.NOT_FOUND);
+	/*
+         * retrieves the customer object associated with the id parameter.
+         * JAXB is used by RESTEasy to convert the object to XML prior to 
+         * sending back to the client.
+         */
+        @GET
+        @Path("customers/")
+        @Produces("text/plain")
+        public String getCustomer() {
+                Map<Integer, Customer> map = custDAO.getCustomerDB();
+		if (map == null) {
+			System.out.println("The map object is null");
+			throw new WebApplicationException(Response.Status.NOT_FOUND);
+		}
+		StringBuffer sb = new StringBuffer();
+		for (Map.Entry<Integer, Customer> entry : map.entrySet()) {
+			sb.append("Key = " + entry.getKey() + ", Value = " + entry.getValue().toString());
+		}
+                return sb.toString();
         }
-        StringBuffer sb = new StringBuffer();
-        for (Map.Entry<Integer, Customer> entry : map.entrySet()) {
-            sb.append("Key = " + entry.getKey() + ", Value = " + entry.getValue().toString());
-        }
-            return sb.toString();
-    }
-
 	
 	/* The client must know the id of the resource to use the PUT operation.
 	 * The operation is idempotent since sending the message more than once has no affect on the service.
@@ -116,7 +117,7 @@ public class CustomerResource {
 	 */
 
 	@PUT
-    @Path("customers/id/{id}")
+	@Path("customers/id/{id}")
 	@Consumes("application/xml")
 	public Response updateCustomer(@PathParam("id") int id, Customer customer) {
 		Customer current = custDAO.getCustomerDB().get(id);

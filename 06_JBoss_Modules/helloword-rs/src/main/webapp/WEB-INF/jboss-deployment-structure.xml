@@ -1,0 +1,10 @@
+
+<jboss-deployment-structure>
+ 
+    <deployment>
+        <dependencies>
+            <module name="org.jgroups" />
+	    <module name="com.redhat.gpe.eapcourse"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

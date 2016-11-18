@@ -1,7 +1,48 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>securitylab</display-name>
+  
+	<!--  TODO: Add security constraint for student portal -->
+	<security-constraint>
+            <web-resource-collection>
+                <web-resource-name>Student resources</web-resource-name>
+                <url-pattern>/student_portal/*</url-pattern>
+            </web-resource-collection>
+            <auth-constraint>
+                <role-name>student</role-name>
+            </auth-constraint>
+    	</security-constraint>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<!--  TODO: Add security constraint for instructor portal -->
+	<security-constraint>
+            <web-resource-collection>
+                <web-resource-name>Instructor resources</web-resource-name>
+                <url-pattern>/instructor_portal/*</url-pattern>
+            </web-resource-collection>
+            <auth-constraint>
+                <role-name>instructor</role-name>
+            </auth-constraint>
+    	</security-constraint>
+	
+	<!-- Security roles referenced by this web application -->
+	<security-role>
+		<role-name>student</role-name>
+	</security-role>
+
+	<security-role>
+		<role-name>instructor</role-name>
+	</security-role>
+	
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
 </web-app>

@@ -21,6 +21,8 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import org.jgroups.util.Util;
+
 /**
  * A simple REST service which is able to say hello to someone using HelloService Please take a look at the web.xml where JAX-RS
  * is enabled
@@ -38,7 +40,8 @@ public class HelloWorld {
     @Path("/json")
     @Produces({ "application/json" })
     public String getHelloWorldJSON() {
-        return "{\"result\":\"" + helloService.createHelloMessage("World") + "\"}";
+	int jgroupVar = Util.MAX_LIST_PRINT_SIZE;
+        return "{\"result\":\"" + helloService.createHelloMessage("World" + jgroupVar) + "\"}";
     }
 
     @GET

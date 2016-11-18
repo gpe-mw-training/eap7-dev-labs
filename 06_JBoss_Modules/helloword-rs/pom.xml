@@ -151,6 +151,23 @@
             <artifactId>jboss-jaxrs-api_2.0_spec</artifactId>
             <scope>provided</scope>
         </dependency>
+
+	<!-- Add JGroups dependency -->
+	<dependency>
+            <groupId>org.jgroups</groupId>
+            <artifactId>jgroups</artifactId>
+	    <version>3.5.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+	<!-- Add dependency on custome module -->
+	<dependency>
+            <groupId>com.redhat.gpe.eapcourse</groupId>
+            <artifactId>jbossmodules</artifactId>
+            <version>1.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

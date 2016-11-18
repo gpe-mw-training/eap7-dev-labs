@@ -1,0 +1,15 @@
+2016-11-10 18:02:34,291 INFO  [org.jboss.modules] (main) JBoss Modules version 1.5.1.Final-redhat-1
+2016-11-10 18:02:34,602 INFO  [org.jboss.as.process.Host Controller.status] (main) WFLYPC0018: Starting process 'Host Controller'
+2016-11-10 18:02:44,297 INFO  [org.jboss.as.process.Server:Server21.status] (ProcessController-threads - 3) WFLYPC0018: Starting process 'Server:Server21'
+2016-11-10 18:02:48,638 INFO  [org.jboss.as.process.Server:Server22.status] (ProcessController-threads - 3) WFLYPC0018: Starting process 'Server:Server22'
+2016-11-10 18:02:57,507 INFO  [org.jboss.as.process.Server:Server23.status] (ProcessController-threads - 3) WFLYPC0018: Starting process 'Server:Server23'
+2016-11-11 01:27:04,843 INFO  [org.jboss.as.process] (Shutdown thread) WFLYPC0017: Shutting down process controller
+2016-11-11 01:27:04,860 INFO  [org.jboss.as.process.Host Controller.status] (Shutdown thread) WFLYPC0019: Stopping process 'Host Controller'
+2016-11-11 01:27:05,096 INFO  [org.jboss.as.process.Server:Server23.status] (ProcessController-threads - 4) WFLYPC0019: Stopping process 'Server:Server23'
+2016-11-11 01:27:05,254 INFO  [org.jboss.as.process.Server:Server22.status] (ProcessController-threads - 4) WFLYPC0019: Stopping process 'Server:Server22'
+2016-11-11 01:27:05,404 INFO  [org.jboss.as.process.Server:Server21.status] (ProcessController-threads - 4) WFLYPC0019: Stopping process 'Server:Server21'
+2016-11-11 01:27:07,968 INFO  [org.jboss.as.process.Server:Server23.status] (reaper for Server:Server23) WFLYPC0011: Process 'Server:Server23' finished with an exit status of 129
+2016-11-11 01:27:08,810 INFO  [org.jboss.as.process.Server:Server22.status] (reaper for Server:Server22) WFLYPC0011: Process 'Server:Server22' finished with an exit status of 143
+2016-11-11 01:27:11,102 INFO  [org.jboss.as.process.Server:Server21.status] (reaper for Server:Server21) WFLYPC0011: Process 'Server:Server21' finished with an exit status of 143
+2016-11-11 01:27:11,361 INFO  [org.jboss.as.process.Host Controller.status] (reaper for Host Controller) WFLYPC0011: Process 'Host Controller' finished with an exit status of 143
+2016-11-11 01:27:11,365 INFO  [org.jboss.as.process] (Shutdown thread) WFLYPC0016: All processes finished; exiting
