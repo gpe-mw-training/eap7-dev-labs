@@ -1,0 +1,7 @@
+batch
+
+# Define a new JMS Queue called: gpteQueue
+# Ensure that it is durable and is defined with a JNDI path
+/subsystem=messaging-activemq/server=default/jms-queue=gpteQueue/:add(entries=["queue/gpteQueue","java:jboss/exported/jms/gpteQueue"],durable=true)
+
+run-batch
