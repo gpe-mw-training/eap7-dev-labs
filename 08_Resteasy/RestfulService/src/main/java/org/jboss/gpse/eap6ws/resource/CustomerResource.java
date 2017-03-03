@@ -69,7 +69,7 @@ public class CustomerResource {
 		customer.setId(custDAO.getIdCounter().incrementAndGet());
 		custDAO.getCustomerDB().put(customer.getId(), customer);
 		System.out.println("Created customer " + customer.getId());
-		return Response.created(URI.create("/customers/" + customer.getId())).build();
+		return Response.created(URI.create("/customers/id/" + customer.getId())).build();
 	}
 	
 	/*
